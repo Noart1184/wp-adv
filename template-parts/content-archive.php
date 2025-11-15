@@ -12,14 +12,26 @@
                             echo get_the_date();
                             ?>
                     </span>
+                    <span class="comment">
+                        <a href="#">
+                            <?php
+                            comments_number();
+                            ?>
+                            </a>
+                        </span> 
                 </div>
-                
-
+                <div class="intro">
+                    <?php
+                    the_excerpt():
+                    ?>
+                    </div>
+                    <a class="more-link" href="<?php
+                                                    the_permalink();
+                                                    ?>">
+                    Read more &rarr;</a>
+                 </div>
             </div>
-            
         </div>
-
     </div>
-</div>
 
             

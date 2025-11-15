@@ -5,12 +5,10 @@
         if (have_post()) {
             while(have_posts()){
                 the_post();
-                get_template_part('template-parts/content', 'archive');
+                get_template_part('template-parts/content', 'page');
+                
+                }
             }
-        }
-        ?>
-        <?php
-            the_posts_pageination();
             ?>
             </article>
 <?php get_footer(); ?>
