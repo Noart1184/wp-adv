@@ -113,3 +113,35 @@ function wp_adv_nav_menu_item_title($title, $item, $args, $depth)
     return $title;
 }
 add_filter('nav_menu_item_title', 'wp_adv_nav_menu_item_title', 10, 4);
+
+function wp_adv_nav_menu_item_title($title, $item, $args, $depth){
+    $icon_class = '';
+    foreach($item->classes as $c) {
+        if(strpos($c, 'fa-') === 0 || strpos($c, 'fab') === 0 || strpos($c, 'fas-') === 0 || strpos($c, 'far-') === 0) {
+            $icon_class = $c;
+            break;
+        }
+
+    }
+    if ($icon_class) {
+        $title = '<i class"' . esc_attr($icon_class) . ' fa-fw mr-2"></i>' . $title;
+    }
+    return $title;
+}
+
+add_filter('adv_menu_item_title', 'wp_adv_nav_menu_item_title', 10, 4);
+
+function wp_adv_widget_areas() {
+    register_sidebar(
+        [
+        'name' => 'Sidebar Area',
+        'id' => 'sidebar-1',
+        'description' => 'Sidebar Widget Area',
+        'before_widget' => '<div class="widget %2$s mb-3">',
+        'after_widget' => '</div>',
+        'before_widget' => 'h3 class="widget-title mb-3">',
+        'after)widget' => '</h3>'
+        ]
+        );
+}
+add_action('widgets_init', 'wp_adv_widget_areas');
