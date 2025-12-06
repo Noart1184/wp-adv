@@ -1,6 +1,8 @@
+
+
 <div class="container">
-	<header class="content-header">
-		<div class="meta mb-3"><span class="date"><?php echo get_the_date(); ?>
+    <header class="content-header">
+        <div class="meta mb-3"><span class="date"><?php echo get_the_date(); ?>
         </span>
         <?php
             the_tags('<span class="tag"><i class="fa fa-tag"></i>', '</span><span class="tag"><i class="fa fa-tag"></i>', '</span>');
@@ -22,8 +24,9 @@
             comments_number('0 Comments', '1 Comment', '% Comments');
         ?>
 
+
     </a></span></div>
-	</header>
+    </header>
 <?php
     the_content();
 ?>
@@ -31,3 +34,4 @@
     comments_template();
 ?>
 </div>
+
